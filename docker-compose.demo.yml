@@ -1,0 +1,99 @@
+services:
+  postgres:
+    volumes:
+      - ./infra/postgres/init-multiple-dbs.sh:/docker-entrypoint-initdb.d/init-multiple-dbs.sh:ro
+
+  backend:
+    environment:
+      DEMO_MODE: "true"
+      DATABASE_URL: postgresql+psycopg://observer:observer@postgres:5432/observer
+      DEFAULT_WORKSPACE_ID: demo-workspace
+      DEFAULT_API_KEY: dev-observer-key
+      CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+
+  airflow:
+    image: apache/airflow:2.9.3-python3.11
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://observer:observer@postgres:5432/airflow
+      AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "True"
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
+    command: >
+      bash -lc "
+      airflow db migrate;
+      airflow users create --username admin --password admin --firstname Demo --lastname User --role Admin --email admin@example.com || true;
+      airflow scheduler > /tmp/airflow-scheduler.log 2>&1 &
+      exec airflow webserver --port 8080
+      "
+    ports:
+      - "${AIRFLOW_PORT:-8080}:8080"
+    volumes:
+      - ./examples/airflow/dags:/opt/airflow/dags:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:8080/health || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+
+  airflow-trigger-samples:
+    image: apache/airflow:2.9.3-python3.11
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://observer:observer@postgres:5432/airflow
+    command: >
+      bash -lc "
+      sleep 45;
+      airflow dags unpause observer_success_dag || true;
+      airflow dags trigger observer_success_dag || true;
+      airflow dags unpause observer_slow_dag || true;
+      airflow dags trigger observer_slow_dag || true;
+      airflow dags unpause observer_failing_dag || true;
+      airflow dags trigger observer_failing_dag || true;
+      airflow dags unpause observer_retry_dag || true;
+      airflow dags trigger observer_retry_dag || true;
+      airflow dags unpause observer_degraded_dag || true;
+      airflow dags trigger observer_degraded_dag || true
+      "
+    volumes:
+      - ./examples/airflow/dags:/opt/airflow/dags:ro
+    depends_on:
+      airflow:
+        condition: service_healthy
+
+  agent:
+    environment:
+      AIRFLOW_URL: http://airflow:8080
+      AIRFLOW_USERNAME: admin
+      AIRFLOW_PASSWORD: admin
+      OBSERVER_API_KEY: dev-observer-key
+      WORKSPACE_ID: demo-workspace
+      AIRFLOW_INSTANCE_UID: local-airflow
+      AIRFLOW_INSTANCE_NAME: Local Airflow
+    depends_on:
+      backend:
+        condition: service_healthy
+      airflow:
+        condition: service_healthy
+
+  demo-seed:
+    image: curlimages/curl:8.11.1
+    command: >
+      sh -c "
+      sleep 8 &&
+      curl --fail -X POST http://backend:8000/api/v1/ingest/snapshot
+      -H 'Content-Type: application/json'
+      -H 'X-API-Key: dev-observer-key'
+      --data-binary @/seed/demo_snapshot.json
+      "
+    volumes:
+      - ./examples/seed:/seed:ro
+    depends_on:
+      backend:
+        condition: service_healthy

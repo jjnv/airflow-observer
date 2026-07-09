@@ -1,0 +1,1047 @@
+{
+  "workspace_id": "demo-workspace",
+  "airflow_instance_uid": "seed-airflow",
+  "airflow_instance_name": "Seeded Demo Airflow",
+  "airflow_base_url": "http://airflow:8080",
+  "collected_at": "2026-07-09T08:30:00+00:00",
+  "dags": [
+    {
+      "dag_id": "customer_orders_etl",
+      "owner": "data-eng",
+      "tags": [
+        "warehouse",
+        "orders"
+      ],
+      "is_active": true,
+      "is_paused": false,
+      "runs": [
+        {
+          "run_id": "scheduled__2026-07-09",
+          "state": "failed",
+          "start_time": "2026-07-09T08:00:00+00:00",
+          "end_time": "2026-07-09T08:15:00+00:00",
+          "execution_date": "2026-07-09T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "failed",
+              "try_number": 2,
+              "start_time": "2026-07-09T08:00:00+00:00",
+              "end_time": "2026-07-09T08:03:00+00:00",
+              "error_summary": "Timeout connecting to source API"
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-09T08:03:00+00:00",
+              "end_time": "2026-07-09T08:15:00+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-08",
+          "state": "failed",
+          "start_time": "2026-07-08T08:00:00+00:00",
+          "end_time": "2026-07-08T08:10:20+00:00",
+          "execution_date": "2026-07-08T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "failed",
+              "try_number": 1,
+              "start_time": "2026-07-08T08:00:00+00:00",
+              "end_time": "2026-07-08T08:03:00+00:00",
+              "error_summary": "Timeout connecting to source API"
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-08T08:03:00+00:00",
+              "end_time": "2026-07-08T08:10:20+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-07",
+          "state": "success",
+          "start_time": "2026-07-07T08:00:00+00:00",
+          "end_time": "2026-07-07T08:09:50+00:00",
+          "execution_date": "2026-07-07T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-07T08:00:00+00:00",
+              "end_time": "2026-07-07T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-07T08:02:00+00:00",
+              "end_time": "2026-07-07T08:09:50+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-06",
+          "state": "success",
+          "start_time": "2026-07-06T08:00:00+00:00",
+          "end_time": "2026-07-06T08:10:05+00:00",
+          "execution_date": "2026-07-06T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-06T08:00:00+00:00",
+              "end_time": "2026-07-06T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-06T08:02:00+00:00",
+              "end_time": "2026-07-06T08:10:05+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-05",
+          "state": "success",
+          "start_time": "2026-07-05T08:00:00+00:00",
+          "end_time": "2026-07-05T08:10:15+00:00",
+          "execution_date": "2026-07-05T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-05T08:00:00+00:00",
+              "end_time": "2026-07-05T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-05T08:02:00+00:00",
+              "end_time": "2026-07-05T08:10:15+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-04",
+          "state": "success",
+          "start_time": "2026-07-04T08:00:00+00:00",
+          "end_time": "2026-07-04T08:09:40+00:00",
+          "execution_date": "2026-07-04T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-04T08:00:00+00:00",
+              "end_time": "2026-07-04T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-04T08:02:00+00:00",
+              "end_time": "2026-07-04T08:09:40+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-03",
+          "state": "success",
+          "start_time": "2026-07-03T08:00:00+00:00",
+          "end_time": "2026-07-03T08:10:10+00:00",
+          "execution_date": "2026-07-03T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-03T08:00:00+00:00",
+              "end_time": "2026-07-03T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-03T08:02:00+00:00",
+              "end_time": "2026-07-03T08:10:10+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-02",
+          "state": "success",
+          "start_time": "2026-07-02T08:00:00+00:00",
+          "end_time": "2026-07-02T08:10:00+00:00",
+          "execution_date": "2026-07-02T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-02T08:00:00+00:00",
+              "end_time": "2026-07-02T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-02T08:02:00+00:00",
+              "end_time": "2026-07-02T08:10:00+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-01",
+          "state": "success",
+          "start_time": "2026-07-01T08:00:00+00:00",
+          "end_time": "2026-07-01T08:09:55+00:00",
+          "execution_date": "2026-07-01T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-01T08:00:00+00:00",
+              "end_time": "2026-07-01T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-01T08:02:00+00:00",
+              "end_time": "2026-07-01T08:09:55+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-30",
+          "state": "success",
+          "start_time": "2026-06-30T08:00:00+00:00",
+          "end_time": "2026-06-30T08:10:25+00:00",
+          "execution_date": "2026-06-30T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-30T08:00:00+00:00",
+              "end_time": "2026-06-30T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-30T08:02:00+00:00",
+              "end_time": "2026-06-30T08:10:25+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-29",
+          "state": "success",
+          "start_time": "2026-06-29T08:00:00+00:00",
+          "end_time": "2026-06-29T08:09:45+00:00",
+          "execution_date": "2026-06-29T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-29T08:00:00+00:00",
+              "end_time": "2026-06-29T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-29T08:02:00+00:00",
+              "end_time": "2026-06-29T08:09:45+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-28",
+          "state": "success",
+          "start_time": "2026-06-28T08:00:00+00:00",
+          "end_time": "2026-06-28T08:10:10+00:00",
+          "execution_date": "2026-06-28T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-28T08:00:00+00:00",
+              "end_time": "2026-06-28T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-28T08:02:00+00:00",
+              "end_time": "2026-06-28T08:10:10+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-27",
+          "state": "success",
+          "start_time": "2026-06-27T08:00:00+00:00",
+          "end_time": "2026-06-27T08:10:00+00:00",
+          "execution_date": "2026-06-27T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-27T08:00:00+00:00",
+              "end_time": "2026-06-27T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-27T08:02:00+00:00",
+              "end_time": "2026-06-27T08:10:00+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-26",
+          "state": "success",
+          "start_time": "2026-06-26T08:00:00+00:00",
+          "end_time": "2026-06-26T08:09:50+00:00",
+          "execution_date": "2026-06-26T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-26T08:00:00+00:00",
+              "end_time": "2026-06-26T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-26T08:02:00+00:00",
+              "end_time": "2026-06-26T08:09:50+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-25",
+          "state": "success",
+          "start_time": "2026-06-25T08:00:00+00:00",
+          "end_time": "2026-06-25T08:10:05+00:00",
+          "execution_date": "2026-06-25T08:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "extract_orders",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-25T08:00:00+00:00",
+              "end_time": "2026-06-25T08:02:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "load_to_redshift",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-25T08:02:00+00:00",
+              "end_time": "2026-06-25T08:10:05+00:00",
+              "error_summary": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dag_id": "jira_ingestion",
+      "owner": "analytics",
+      "tags": [
+        "saas",
+        "support"
+      ],
+      "is_active": true,
+      "is_paused": false,
+      "runs": [
+        {
+          "run_id": "scheduled__2026-07-09",
+          "state": "success",
+          "start_time": "2026-07-09T07:00:00+00:00",
+          "end_time": "2026-07-09T07:20:00+00:00",
+          "execution_date": "2026-07-09T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 4,
+              "start_time": "2026-07-09T07:00:00+00:00",
+              "end_time": "2026-07-09T07:05:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-09T07:05:00+00:00",
+              "end_time": "2026-07-09T07:20:00+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-08",
+          "state": "success",
+          "start_time": "2026-07-08T07:00:00+00:00",
+          "end_time": "2026-07-08T07:12:40+00:00",
+          "execution_date": "2026-07-08T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-08T07:00:00+00:00",
+              "end_time": "2026-07-08T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-08T07:03:00+00:00",
+              "end_time": "2026-07-08T07:12:40+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-07",
+          "state": "success",
+          "start_time": "2026-07-07T07:00:00+00:00",
+          "end_time": "2026-07-07T07:12:00+00:00",
+          "execution_date": "2026-07-07T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-07T07:00:00+00:00",
+              "end_time": "2026-07-07T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-07T07:03:00+00:00",
+              "end_time": "2026-07-07T07:12:00+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-06",
+          "state": "success",
+          "start_time": "2026-07-06T07:00:00+00:00",
+          "end_time": "2026-07-06T07:11:30+00:00",
+          "execution_date": "2026-07-06T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-06T07:00:00+00:00",
+              "end_time": "2026-07-06T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-06T07:03:00+00:00",
+              "end_time": "2026-07-06T07:11:30+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-05",
+          "state": "success",
+          "start_time": "2026-07-05T07:00:00+00:00",
+          "end_time": "2026-07-05T07:11:50+00:00",
+          "execution_date": "2026-07-05T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 2,
+              "start_time": "2026-07-05T07:00:00+00:00",
+              "end_time": "2026-07-05T07:05:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-05T07:05:00+00:00",
+              "end_time": "2026-07-05T07:11:50+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-04",
+          "state": "success",
+          "start_time": "2026-07-04T07:00:00+00:00",
+          "end_time": "2026-07-04T07:12:20+00:00",
+          "execution_date": "2026-07-04T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-04T07:00:00+00:00",
+              "end_time": "2026-07-04T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-04T07:03:00+00:00",
+              "end_time": "2026-07-04T07:12:20+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-03",
+          "state": "success",
+          "start_time": "2026-07-03T07:00:00+00:00",
+          "end_time": "2026-07-03T07:11:20+00:00",
+          "execution_date": "2026-07-03T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-03T07:00:00+00:00",
+              "end_time": "2026-07-03T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-03T07:03:00+00:00",
+              "end_time": "2026-07-03T07:11:20+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-02",
+          "state": "success",
+          "start_time": "2026-07-02T07:00:00+00:00",
+          "end_time": "2026-07-02T07:11:45+00:00",
+          "execution_date": "2026-07-02T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-02T07:00:00+00:00",
+              "end_time": "2026-07-02T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-02T07:03:00+00:00",
+              "end_time": "2026-07-02T07:11:45+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-07-01",
+          "state": "success",
+          "start_time": "2026-07-01T07:00:00+00:00",
+          "end_time": "2026-07-01T07:11:55+00:00",
+          "execution_date": "2026-07-01T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 2,
+              "start_time": "2026-07-01T07:00:00+00:00",
+              "end_time": "2026-07-01T07:05:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-01T07:05:00+00:00",
+              "end_time": "2026-07-01T07:11:55+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-30",
+          "state": "success",
+          "start_time": "2026-06-30T07:00:00+00:00",
+          "end_time": "2026-06-30T07:11:30+00:00",
+          "execution_date": "2026-06-30T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-30T07:00:00+00:00",
+              "end_time": "2026-06-30T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-30T07:03:00+00:00",
+              "end_time": "2026-06-30T07:11:30+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-29",
+          "state": "success",
+          "start_time": "2026-06-29T07:00:00+00:00",
+          "end_time": "2026-06-29T07:12:10+00:00",
+          "execution_date": "2026-06-29T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-29T07:00:00+00:00",
+              "end_time": "2026-06-29T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-29T07:03:00+00:00",
+              "end_time": "2026-06-29T07:12:10+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-28",
+          "state": "success",
+          "start_time": "2026-06-28T07:00:00+00:00",
+          "end_time": "2026-06-28T07:11:40+00:00",
+          "execution_date": "2026-06-28T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-28T07:00:00+00:00",
+              "end_time": "2026-06-28T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-28T07:03:00+00:00",
+              "end_time": "2026-06-28T07:11:40+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-27",
+          "state": "success",
+          "start_time": "2026-06-27T07:00:00+00:00",
+          "end_time": "2026-06-27T07:11:50+00:00",
+          "execution_date": "2026-06-27T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 2,
+              "start_time": "2026-06-27T07:00:00+00:00",
+              "end_time": "2026-06-27T07:05:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-27T07:05:00+00:00",
+              "end_time": "2026-06-27T07:11:50+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-26",
+          "state": "success",
+          "start_time": "2026-06-26T07:00:00+00:00",
+          "end_time": "2026-06-26T07:11:35+00:00",
+          "execution_date": "2026-06-26T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-26T07:00:00+00:00",
+              "end_time": "2026-06-26T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-26T07:03:00+00:00",
+              "end_time": "2026-06-26T07:11:35+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "scheduled__2026-06-25",
+          "state": "success",
+          "start_time": "2026-06-25T07:00:00+00:00",
+          "end_time": "2026-06-25T07:12:05+00:00",
+          "execution_date": "2026-06-25T07:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "fetch_issues",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-25T07:00:00+00:00",
+              "end_time": "2026-06-25T07:03:00+00:00",
+              "error_summary": null
+            },
+            {
+              "task_id": "sync_warehouse",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-25T07:03:00+00:00",
+              "end_time": "2026-06-25T07:12:05+00:00",
+              "error_summary": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dag_id": "unowned_marketing_export",
+      "owner": null,
+      "tags": [],
+      "is_active": true,
+      "is_paused": false,
+      "runs": [
+        {
+          "run_id": "manual__2026-07-09",
+          "state": "success",
+          "start_time": "2026-07-09T09:00:00+00:00",
+          "end_time": "2026-07-09T09:02:00+00:00",
+          "execution_date": "2026-07-09T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-09T09:00:00+00:00",
+              "end_time": "2026-07-09T09:02:00+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-07-08",
+          "state": "success",
+          "start_time": "2026-07-08T09:00:00+00:00",
+          "end_time": "2026-07-08T09:01:58+00:00",
+          "execution_date": "2026-07-08T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-08T09:00:00+00:00",
+              "end_time": "2026-07-08T09:01:58+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-07-07",
+          "state": "success",
+          "start_time": "2026-07-07T09:00:00+00:00",
+          "end_time": "2026-07-07T09:02:02+00:00",
+          "execution_date": "2026-07-07T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-07T09:00:00+00:00",
+              "end_time": "2026-07-07T09:02:02+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-07-06",
+          "state": "success",
+          "start_time": "2026-07-06T09:00:00+00:00",
+          "end_time": "2026-07-06T09:02:05+00:00",
+          "execution_date": "2026-07-06T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-06T09:00:00+00:00",
+              "end_time": "2026-07-06T09:02:05+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-07-05",
+          "state": "success",
+          "start_time": "2026-07-05T09:00:00+00:00",
+          "end_time": "2026-07-05T09:01:59+00:00",
+          "execution_date": "2026-07-05T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-05T09:00:00+00:00",
+              "end_time": "2026-07-05T09:01:59+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-07-04",
+          "state": "success",
+          "start_time": "2026-07-04T09:00:00+00:00",
+          "end_time": "2026-07-04T09:02:01+00:00",
+          "execution_date": "2026-07-04T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-04T09:00:00+00:00",
+              "end_time": "2026-07-04T09:02:01+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-07-03",
+          "state": "success",
+          "start_time": "2026-07-03T09:00:00+00:00",
+          "end_time": "2026-07-03T09:01:57+00:00",
+          "execution_date": "2026-07-03T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-03T09:00:00+00:00",
+              "end_time": "2026-07-03T09:01:57+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-07-02",
+          "state": "success",
+          "start_time": "2026-07-02T09:00:00+00:00",
+          "end_time": "2026-07-02T09:02:03+00:00",
+          "execution_date": "2026-07-02T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-02T09:00:00+00:00",
+              "end_time": "2026-07-02T09:02:03+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-07-01",
+          "state": "success",
+          "start_time": "2026-07-01T09:00:00+00:00",
+          "end_time": "2026-07-01T09:02:06+00:00",
+          "execution_date": "2026-07-01T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-07-01T09:00:00+00:00",
+              "end_time": "2026-07-01T09:02:06+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-06-30",
+          "state": "success",
+          "start_time": "2026-06-30T09:00:00+00:00",
+          "end_time": "2026-06-30T09:02:00+00:00",
+          "execution_date": "2026-06-30T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-30T09:00:00+00:00",
+              "end_time": "2026-06-30T09:02:00+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-06-29",
+          "state": "success",
+          "start_time": "2026-06-29T09:00:00+00:00",
+          "end_time": "2026-06-29T09:01:58+00:00",
+          "execution_date": "2026-06-29T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-29T09:00:00+00:00",
+              "end_time": "2026-06-29T09:01:58+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-06-28",
+          "state": "success",
+          "start_time": "2026-06-28T09:00:00+00:00",
+          "end_time": "2026-06-28T09:02:04+00:00",
+          "execution_date": "2026-06-28T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-28T09:00:00+00:00",
+              "end_time": "2026-06-28T09:02:04+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-06-27",
+          "state": "success",
+          "start_time": "2026-06-27T09:00:00+00:00",
+          "end_time": "2026-06-27T09:01:59+00:00",
+          "execution_date": "2026-06-27T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-27T09:00:00+00:00",
+              "end_time": "2026-06-27T09:01:59+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-06-26",
+          "state": "success",
+          "start_time": "2026-06-26T09:00:00+00:00",
+          "end_time": "2026-06-26T09:02:01+00:00",
+          "execution_date": "2026-06-26T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-26T09:00:00+00:00",
+              "end_time": "2026-06-26T09:02:01+00:00",
+              "error_summary": null
+            }
+          ]
+        },
+        {
+          "run_id": "manual__2026-06-25",
+          "state": "success",
+          "start_time": "2026-06-25T09:00:00+00:00",
+          "end_time": "2026-06-25T09:01:56+00:00",
+          "execution_date": "2026-06-25T09:00:00+00:00",
+          "tasks": [
+            {
+              "task_id": "export_csv",
+              "state": "success",
+              "try_number": 1,
+              "start_time": "2026-06-25T09:00:00+00:00",
+              "end_time": "2026-06-25T09:01:56+00:00",
+              "error_summary": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
